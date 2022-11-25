@@ -30,6 +30,7 @@ tips: user file
 | /etc/shadow | password |                                           |
 
 linux file permission
+```
 -rw-r--r-- 12 linuxize users 12.0K Apr  28 10:10 file\_name
 |[-][-][-]-   [------] [---]
 | |  |  | |      |       |
@@ -40,6 +41,7 @@ linux file permission
 | |  +-------------------------------> 3. Group Permissions
 | +----------------------------------> 2. Owner Permissions  
 +------------------------------------> 1. File Type: regular file (-), directory (d), symblic (l)
+```
 
 about `s` flag:
 - on directory's group triplet: New file inherits this directory's group id instead of current user's group id.
