@@ -9,6 +9,7 @@
 | pget     | a script to install software without sudo [^1] |
 | proxychains | use proxy temporarily [^2]                  |
 | sslocal  | a cmdline version of shadosocks [^3]           | 
+| valgrind | c++ profiler [^4]                              |
 
 
 tips: .profile vs .bashrc
@@ -21,6 +22,7 @@ tips: .profile vs .bashrc
 [^1]: add ~/.apt/usr/bin to $PATH and ~/.apt/usr/lib to `$LD_LIBRARY_PATH`, maybe some other directory.
 [^2]:
 [^3]: see shadowsocks.json 
+[^4]: see http://senlinzhan.github.io/2017/12/31/valgrind/
 
 tips: user file
 | file        | note     | format                                    |
