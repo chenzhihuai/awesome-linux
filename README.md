@@ -138,4 +138,4 @@ do
   shell_COMMANDS
 done
 ```
-
+all in one: `cat | grep | cut | awk | sort`
