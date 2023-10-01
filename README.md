@@ -1,31 +1,48 @@
 # Awesome linux
 ## awesome tools
-| cli      | desc                                                                                 |
-| -------- | ------------------------------------------------------------------------------------ |
-| fzf      | A command-line fuzzy finder                                                          |
-| tldr     | too long; don't read                                                                 |
-| rg       | ripgrep: search content in directory                                                 |
-| fd       | A simple, fast and user-friendly alternative to 'find'                               |
-| fasd[^2] | fasd Command-line productivity booster, offers quick access to files and directories |
-| bd,up    | Quickly go back to a parent directory                                                |
-| zsh      | a better alternative to bash                                                         |
-| tsp      | task spooler. A simple unix batch system                                             |
-| valgrind | c++ profiler [^4]                                                                    |
-| mdlt[^5] | A command-line utility for quick math.                                               |
-| ranger   | a file browers like vim                                                              |
-| bat      | a color-full highlighted alternative to cat                                          |
+| cli                                                               | desc                                                                                 |
+| ----------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
+| fzf                                                               | A command-line fuzzy finder                                                          |
+| tldr                                                              | too long; don't read                                                                 |
+| rg                                                                | ripgrep: search content in directory                                                 |
+| fd                                                                | fdfind: A simple, fast and user-friendly alternative to 'find'                       |
+| [fasd](https://github.com/clvv/fasd)                              | fasd Command-line productivity booster, offers quick access to files and directories |
+| [up](https://github.com/shannonmoeller/up)                        | Quickly go back to a parent directory                                                |
+| zsh,oh-my-zsh                                                     | a better alternative to bash                                                         |
+| [tsp](https://manpages.ubuntu.com/manpages/jammy/man1/tsp.1.html) | task spooler. A simple unix batch system                                             |
+| [valgrind](https://github.com/gessen/zsh-fzf-kill)                | c++ profiler                                                                         |
+| [mdlt](https://github.com/metadelta/mdlt)                         | A command-line utility for quick math.                                               |
+| bat                                                               | batcat: a color-full highlighted alternative to cat                                  |
 
-Other maybe useful: pipe_exec, parallel, column -t, colc, has, tmux, sslocal[^3], xsv, pget[^1]
+Other maybe useful: pipe_exec, parallel, column -t, colc, has, tmux, sslocal[^3], xsv, pget[^1], ranger
 
 reference: https://github.com/agarrharr/awesome-cli-apps and https://github.com/alebcay/awesome-shell
 
+[^1]: add ~/.apt/usr/bin to $PATH and ~/.apt/usr/lib to $LD_LIBRARY_PATH, maybe some other directory.
+[^3]: shadowsocks.json 
+
+```bash
+# install all
+sudo zsh apt install fd-find bat ripgrep zsh fasd
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
+~/.fzf/install
+curl --create-dirs -o ~/.config/up/up.sh https://raw.githubusercontent.com/shannonmoeller/up/master/up.sh
+echo 'source ~/.config/up/up.sh' >> ~/.zshrc
+
+# zshrc 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(fasd --init auto)"
+alias f='fasd -f'        # file
+alias z='fasd_cd -d'     # cd, same functionality as j in autojump
+alias zz='fasd_cd -d -i' # cd with interactive selection
+alias v='f -e vim' # quick opening files with vim
+alias fd='fdfind'
+alias bat='batcat'
+```
 
 [^1]: add ~/.apt/usr/bin to $PATH and ~/.apt/usr/lib to `$LD_LIBRARY_PATH`, maybe some other directory.
-[^2]: https://github.com/clvv/fasd
-[^3]: shadowsocks.json 
-[^4]: http://senlinzhan.github.io/2017/12/31/valgrind/
-[^5]: https://github.com/metadelta/mdlt
-[^6]: https://manpages.ubuntu.com/manpages/jammy/man1/tsp.1.html
+[^7]: cmd is fdfind and package name is fd-find
 ## .profile vs .bashrc
 |      | non-login   | login        |
 | ---- | ----------- | ------------ |
@@ -94,15 +111,17 @@ https://phoenixnap.com/kb/bash-single-vs-double-quotes
 https://www.tecmint.com/exploring-proc-file-system-in-linux/
 
 ## expression in shell
-int only:
+```bash
+# int only
 echo $((1+2))
 z=$(expr 1+3)  
 let k=3+5
 
-float:
+# float
 echo $(echo 1 + 2.2 | bc)
 y=$(bc <<< 1.1 + 2.2)
 
+```
 ## loop
 ```bash
 #split by whitespace
