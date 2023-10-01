@@ -1,24 +1,22 @@
 # Awesome linux
 ## awesome tools
-| name     | comment                                        |
-|----------|------------------------------------------------|
-| bat      | a color-full highlighted alternative to cat    |
-| xonsh    | a python-style shell to replace bash           |
-| lunarvim | an awesome text editor                         |
-| intellij | a modern tmux                                  |
-| zsh      | a better alternative to bash                   |
-| ranger   | a file browers like vim                        |
-| pget     | a script to install software without sudo [^1] |
-| proxychains | use proxy temporarily [^2]                  |
-| sslocal  | a cmdline version of shadosocks [^3]           | 
-| valgrind | c++ profiler [^4]                              |
-| tldr     | too long; don't read                           |
-| rg       | ripgrep: search content in directory           | 
-| z        | smart change work directory                    |
+- bat      - a color-full highlighted alternative to cat    
+- fzf      - A command-line fuzzy finder                    
+- tldr     - too long; don't read                           
+- rg       - ripgrep: search content in directory            
+- fd - A simple, fast and user-friendly alternative to 'find'
+- fasd - fasd - Command-line productivity booster, offers quick access to files and directories 
+- bd,up - Quickly go back to a parent directory
+------------
+- zsh      - a better alternative to bash                   
+- tsp - task spooler. A simple unix batch system
+- valgrind - c++ profiler [^4]                              
+- mdlt - A command-line utility for quick math.
+- ranger  - a file browers like vim                        
 
-Other maybe useful: mdlt, up, pipe_exec, task-spooler, parrallel, v[^5]
+Other maybe useful: pipe_exec, parallel, column -t, colc, has, tmux, sslocal[^3], xsv, pget
 
-reference: https://github.com/agarrharr/awesome-cli-apps
+reference: https://github.com/agarrharr/awesome-cli-apps and https://github.com/alebcay/awesome-shell
 
 
 [^1]: add ~/.apt/usr/bin to $PATH and ~/.apt/usr/lib to `$LD_LIBRARY_PATH`, maybe some other directory.
@@ -91,3 +89,32 @@ about nohup
 https://phoenixnap.com/kb/bash-single-vs-double-quotes
 
 ## about /proc
+https://www.tecmint.com/exploring-proc-file-system-in-linux/
+
+## expression in shell
+int only:
+echo $((1+2))
+z=$(expr 1+3)  
+let k=3+5
+
+float:
+echo $(echo 1 + 2.2 | bc)
+y=$(bc <<< 1.1 + 2.2)
+
+## loop
+```bash
+#split by whitespace
+for var in a b c 
+do 
+  echo $var 
+done
+# use ; instead of newline
+for var in $(ls);do echo $var; done
+
+## The C-style Bash for loop ##
+for (( initializer; condition; step ))
+do
+  shell_COMMANDS
+done
+```
+
