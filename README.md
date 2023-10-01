@@ -1,32 +1,34 @@
 # Awesome linux
 ## awesome tools
-- bat      - a color-full highlighted alternative to cat    
-- fzf      - A command-line fuzzy finder                    
-- tldr     - too long; don't read                           
-- rg       - ripgrep: search content in directory            
-- fd - A simple, fast and user-friendly alternative to 'find'
-- fasd - fasd - Command-line productivity booster, offers quick access to files and directories 
-- bd,up - Quickly go back to a parent directory
-------------
-- zsh      - a better alternative to bash                   
-- tsp - task spooler. A simple unix batch system
-- valgrind - c++ profiler [^4]                              
-- mdlt - A command-line utility for quick math.
-- ranger  - a file browers like vim                        
+| cli      | desc                                                                                 |
+| -------- | ------------------------------------------------------------------------------------ |
+| fzf      | A command-line fuzzy finder                                                          |
+| tldr     | too long; don't read                                                                 |
+| rg       | ripgrep: search content in directory                                                 |
+| fd       | A simple, fast and user-friendly alternative to 'find'                               |
+| fasd[^2] | fasd Command-line productivity booster, offers quick access to files and directories |
+| bd,up    | Quickly go back to a parent directory                                                |
+| zsh      | a better alternative to bash                                                         |
+| tsp      | task spooler. A simple unix batch system                                             |
+| valgrind | c++ profiler [^4]                                                                    |
+| mdlt[^5] | A command-line utility for quick math.                                               |
+| ranger   | a file browers like vim                                                              |
+| bat      | a color-full highlighted alternative to cat                                          |
 
-Other maybe useful: pipe_exec, parallel, column -t, colc, has, tmux, sslocal[^3], xsv, pget
+Other maybe useful: pipe_exec, parallel, column -t, colc, has, tmux, sslocal[^3], xsv, pget[^1]
 
 reference: https://github.com/agarrharr/awesome-cli-apps and https://github.com/alebcay/awesome-shell
 
 
 [^1]: add ~/.apt/usr/bin to $PATH and ~/.apt/usr/lib to `$LD_LIBRARY_PATH`, maybe some other directory.
-[^2]:
-[^3]: see shadowsocks.json 
-[^4]: see http://senlinzhan.github.io/2017/12/31/valgrind/
-[^5]: see https://github.com/rupa/v
+[^2]: https://github.com/clvv/fasd
+[^3]: shadowsocks.json 
+[^4]: http://senlinzhan.github.io/2017/12/31/valgrind/
+[^5]: https://github.com/metadelta/mdlt
+[^6]: https://manpages.ubuntu.com/manpages/jammy/man1/tsp.1.html
 ## .profile vs .bashrc
 |      | non-login   | login        |
-|------|-------------|--------------|
+| ---- | ----------- | ------------ |
 | user | ~/.bashrc   | ~/.profile   |
 | all  | /etc/bashrc | /etc/profile |
 
@@ -37,7 +39,7 @@ reference: https://www.baeldung.com/linux/bashrc-vs-bash-profile-vs-profile
 
 tips: user file
 | file        | note     | format                                    |
-|-------------|----------|-------------------------------------------|
+| ----------- | -------- | ----------------------------------------- |
 | /etc/passwd | user     | username:password:uid:gid:info:home:shell |
 | /etc/group  | group    | group:password:gid:user1,user2,...        |
 | /etc/shadow | password |                                           |
