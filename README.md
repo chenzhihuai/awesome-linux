@@ -3,7 +3,7 @@
 | cli                                                               | desc                                                                                 |
 | ----------------------------------------------------------------- | ------------------------------------------------------------------------------------ |
 | fzf                                                               | A command-line fuzzy finder                                                          |
-| tldr                                                              | too long; don't read                                                                 |
+| tldr                                                              | too long; don't read (run `tldr -u` once installed)                                  |
 | rg                                                                | ripgrep: search content in directory                                                 |
 | fd                                                                | fdfind: A simple, fast and user-friendly alternative to 'find'                       |
 | [fasd](https://github.com/clvv/fasd)                              | fasd Command-line productivity booster, offers quick access to files and directories |
@@ -23,10 +23,14 @@ reference: https://github.com/agarrharr/awesome-cli-apps and https://github.com/
 
 ```bash
 # install all
-sudo zsh apt install fd-find bat ripgrep zsh fasd
+sudo apt install fd-find bat ripgrep zsh fasd tldr
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
 ~/.fzf/install
+git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
+echo 'source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh' >> ~/.zshrc
+mkdir ~/.local/share/tldr -p
+tldr -u
 curl --create-dirs -o ~/.config/up/up.sh https://raw.githubusercontent.com/shannonmoeller/up/master/up.sh
 echo 'source ~/.config/up/up.sh' >> ~/.zshrc
 
@@ -36,7 +40,7 @@ eval "$(fasd --init auto)"
 alias f='fasd -f'        # file
 alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
-alias v='f -e vim' # quick opening files with vim
+alias v='f -t -e vim -b viminfo'
 alias fd='fdfind'
 alias bat='batcat'
 ```

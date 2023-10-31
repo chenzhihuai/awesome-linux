@@ -2,7 +2,7 @@
   "server":"gtm-sg-6wr2u201t05.gtm-i2d4.com",
   "server_port":14004,
   "method":"aes-128-gcm",
-  "password" : "173b94df-da75-4022-b7e2-c8025fa08eaf",
+  "password" : "{{password}}",
   "local_address": "127.0.0.1",
   "local_port":1080,
   "timeout":300
