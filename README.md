@@ -28,8 +28,9 @@ mkdir ~/.local/share/tldr -p
 tldr -u
 curl --create-dirs -o ~/.config/up/up.sh https://raw.githubusercontent.com/shannonmoeller/up/master/up.sh
 echo 'source ~/.config/up/up.sh' >> ~/.zshrc
-
-# zshrc 
+```
+```
+# ~/.zshrc 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 eval "$(fasd --init auto)"
 alias f='fasd -f'        # file
@@ -37,7 +38,6 @@ alias z='fasd_cd -d'     # cd, same functionality as j in autojump
 alias zz='fasd_cd -d -i' # cd with interactive selection
 alias v='f -t -e vim -b viminfo'
 alias fd='fdfind'
-alias bat='batcat'
 ```
 
 [^1]: add ~/.apt/usr/bin to $PATH and ~/.apt/usr/lib to `$LD_LIBRARY_PATH`, maybe some other directory.
