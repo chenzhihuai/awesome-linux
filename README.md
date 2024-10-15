@@ -9,17 +9,12 @@
 | [fasd](https://github.com/clvv/fasd)                              | fasd Command-line productivity booster, offers quick access to files and directories |
 | [up](https://github.com/shannonmoeller/up)                        | Quickly go back to a parent directory                                                |
 | zsh,oh-my-zsh                                                     | a better alternative to bash                                                         |
-| [tsp](https://manpages.ubuntu.com/manpages/jammy/man1/tsp.1.html) | task spooler. A simple unix batch system                                             |
-| [valgrind](https://github.com/gessen/zsh-fzf-kill)                | c++ profiler                                                                         |
-| [mdlt](https://github.com/metadelta/mdlt)                         | A command-line utility for quick math.                                               |
-| bat                                                               | batcat: a color-full highlighted alternative to cat                                  |
 
-Other maybe useful: pipe_exec, parallel, column -t, colc, has, tmux, sslocal[^3], xsv, pget[^1], ranger
+
+Other maybe useful: pipe_exec, parallel, column -t, colc, has, tmux, sslocal[^3], xsv, pget[^1], ranger, mldt (math calc), tsp (tasks pooler), ,valgrind (c++ profiler)
 
 reference: https://github.com/agarrharr/awesome-cli-apps and https://github.com/alebcay/awesome-shell
 
-[^1]: add ~/.apt/usr/bin to $PATH and ~/.apt/usr/lib to $LD_LIBRARY_PATH, maybe some other directory.
-[^3]: shadowsocks.json 
 
 ```bash
 # install all
