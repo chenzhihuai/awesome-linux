@@ -15,7 +15,7 @@ Other maybe useful: pipe_exec, parallel, column -t, colc, has, tmux, sslocal[^3]
 
 reference: https://github.com/agarrharr/awesome-cli-apps and https://github.com/alebcay/awesome-shell
 
-
+执行下列命令进行安装
 ```bash
 # install all
 sudo apt install fd-find bat ripgrep zsh fasd tldr
@@ -29,6 +29,7 @@ tldr -u
 curl --create-dirs -o ~/.config/up/up.sh https://raw.githubusercontent.com/shannonmoeller/up/master/up.sh
 echo 'source ~/.config/up/up.sh' >> ~/.zshrc
 ```
+把一下内容放到~/.zshrc下，实现z跳转
 ```
 # ~/.zshrc 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
